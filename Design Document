@@ -1,0 +1,52 @@
+# Zookeeper's Challenge Design Document
+
+## Overview
+The Zookeeper's Challenge project aims to develop a program for efficiently managing a zoo's population and generating detailed population reports. This document outlines the design plan for the project.
+
+## Classes and Responsibilities
+
+### Zoo Class
+- Manages the zoo population.
+- Responsible for adding and removing animals.
+- Generates the zoo population report.
+- Utilizes an ArrayList to store Habitat objects.
+
+### Animal Class
+- Represents a zoo animal.
+- Stores attributes such as name, birth date, species, color, weight, and habitat.
+- Utilizes a HashMap to manage attribute-value pairs.
+
+### Habitat Class
+- Represents a zoo habitat.
+- Maintains a list of animals residing in the habitat.
+- Utilizes an ArrayList to store Animal objects.
+
+### NameGenerator Class
+- Generates unique names for animals.
+- Utilizes the `animalNames.txt` file as a source.
+- Utilizes a Scanner to read the file and a HashMap to track used names.
+
+### BirthdayCalculator Class
+- Calculates an animal's birthday based on data from the `arrivingAnimals.txt` file.
+- Utilizes a Scanner to read the file and a LocalDate object for calculations.
+
+## Interactions Between Classes
+- Zoo interacts with Habitat by managing Habitat objects in its ArrayList.
+- Habitat interacts with Animal by managing Animal objects in its ArrayList.
+- Animal interacts with NameGenerator to obtain unique names.
+- Animal interacts with BirthdayCalculator to calculate birthdays.
+
+## Report Generation
+- Zoo is responsible for generating the population report.
+- It iterates through its ArrayList of Habitat objects, calling the `toString()` method on each Habitat.
+- Habitat iterates through its ArrayList of Animal objects, calling the `toString()` method on each Animal.
+- Animal generates its own `toString()` method by iterating through its HashMap of attributes.
+
+## Advantages of Design
+- Efficient management of the zoo population.
+- Easy generation of population reports.
+- Use of ArrayList and HashMap for efficient storage and retrieval.
+- Clear and organized interactions between classes.
+
+## Conclusion
+This design ensures efficient and organized management of the zoo's population, facilitating easy report generation. By leveraging appropriate data structures and establishing clear interactions between classes, the program will be cohesive and robust.
