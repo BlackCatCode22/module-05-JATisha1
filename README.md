@@ -5,35 +5,3 @@ In the provided code, the hyena names are read from the file and stored in an Ar
 
 Using a Queue:
 Instead of using an ArrayList, you can use a Queue to store the hyena names. A Queue is a data structure that follows the First-In-First-Out (FIFO) rule. This means that the first element added to the Queue will be the first one to be removed.
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        // ...
-        Queue<String> hyenaNames = new LinkedList<>();
-        // ...
-        while (scanner.hasNextLine()) {
-            // ...
-            String[] myHyenaNamesArray = scanner.nextLine().split(", ");
-            // ...
-            for (String someName : myHyenaNamesArray)
-                hyenaNames.add(someName);
-            // ...
-            String firstHyenaName = hyenaNames.poll();
-            // ...
-        }
-        // ...
-        for (Animal animal : animals) {
-            // ...
-            String name = hyenaNames.poll();
-            Animal myAnimal = new Animal(name, species, age);
-            // ...
-        }
-        // ...
-    }
-}
